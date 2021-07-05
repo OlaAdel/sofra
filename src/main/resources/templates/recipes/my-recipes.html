@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+		<head th:replace="layouts :: header"></head>
+	<body>
+		<nav th:replace="layouts :: navbar"></nav>
+		<div class="container">
+			<h3>My Recipes</h3>
+			<hr>			
+			<a th:href="@{/recipes/new}" class="btn btn-primary btn-sm mb-3"> Add Recipe </a> 
+			<br></br>
+			
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>Title</th>
+						<th>Action</th>
+					</tr>
+				</thead>		
+				<tbody>
+					<tr th:each="aRecipe : ${recipes}">
+					    <td th:text="${aRecipe.title}"></td>					
+						<td>
+							<a th:href="@{'/recipes/'+${aRecipe.recipeId}}"
+								class="btn btn-info btn-sm">
+								View Details
+							</a>
+							<a th:href="@{/recipes/edit(id=${aRecipe.recipeId})}"
+								class="btn btn-info btn-sm">
+								Update
+							</a>
+							<a th:href="@{/recipes/delete(id=${aRecipe.recipeId})}"
+								class="btn btn-danger btn-sm">
+								Delete
+							</a>
+							
+						</td>
+					</tr>
+				</tbody>
+			
+			</table>
+		</div>
+	</body>
+</html>
