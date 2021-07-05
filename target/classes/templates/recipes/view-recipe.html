@@ -1,0 +1,46 @@
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+		<head th:replace="layouts :: header"></head>
+	<body>
+		<nav th:replace="layouts :: navbar"></nav>
+			<br>
+		<div class="container">
+		
+		
+						
+			<div class="form-group row">
+				<label>Title</label>
+				<textarea type="text" th:text="${recipe.title}" disabled></textarea>
+			</div>
+		
+			<div class="form-group row">
+				<label>Description</label>
+				<textarea type="text" th:text="${recipe.description}" disabled></textarea>
+			</div>
+			
+			<div class="form-group row">
+				<label>Servings</label>
+				<textarea type="text" th:text="${recipe.servings}" disabled></textarea>
+			</div>
+			
+			<div class="form-group row">
+				<label>Cooking Time In Minutes</label>
+				<textarea type="text" th:text="${recipe.cookingTimeInMinutes}" disabled></textarea>
+			</div>
+			
+			<div class="form-group row">
+				<label>Ingredients</label>
+				<textarea type="text" th:text="${recipe.ingredients}" disabled></textarea>
+			</div>
+			
+			<div class="form-group row">
+				<label>Steps</label>
+				<textarea type="text" th:text="${recipe.steps}" disabled></textarea>
+			</div>
+	
+			
+		</div>
+		
+	</body>
+	
+	
+</html>

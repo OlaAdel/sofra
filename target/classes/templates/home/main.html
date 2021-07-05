@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+		<head th:replace="layouts :: header"></head>
+	<body>
+		<nav th:replace="layouts :: navbar"></nav>
+		
+		<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>Title</th>
+						<th>Action</th>
+					</tr>
+				</thead>		
+				<tbody>
+					<tr th:each="aRecipe : ${recipes}">
+					    <td th:text="${aRecipe.title}"></td>					
+						<td>
+							<a th:href="@{'/recipes/'+${aRecipe.recipeId}}"
+								class="btn btn-info btn-sm">
+								View Details
+							</a>							
+						</td>
+					</tr>
+				</tbody>
+			
+			</table>
+
+	</body>
+</html>
